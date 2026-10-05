@@ -50,10 +50,11 @@ class WordAnalyzer:
 def main():
 
     books = {
-        "1": "princess_mars.txt",
-        "2": "Tarzan.txt",
-        "3": "treasure_island.txt",
-        "4": "monte_cristo.txt"
+    "1": Path("princess_mars.txt"),
+    "2": Path("Tarzan.txt"),
+    "3": Path("treasure_island.txt"),
+    "4": Path("monte_cristo.txt")
+
     }
     
     while True:
@@ -71,13 +72,15 @@ def main():
 
             if analyzer.process_file():
                 analyzer.print_report()
+                input("Press Enter to return to the menu...")
 
         elif choice == "5":
             print("Goodbye!")
             break
 
         else:
-            print("Invalid choice.")
+            print("Invalid choice. Please select from 1-5.")
+            input("Press Enter to return to the menu...")
 
 if __name__ == "__main__":
     main()
